@@ -31,4 +31,17 @@ public class ListNode {
         current.next = new ListNode(val);
         return head;
     }
+
+    public static void printList(ListNode head) {
+        ListNode curr = head;
+        while (curr != null) {
+            if (curr.next == null) {
+                System.out.println(curr.val);
+                break;
+            }
+            System.out.print(curr.val + " -> ");
+            curr = curr.next;
+        }
+        System.out.println();
+    }
 }
