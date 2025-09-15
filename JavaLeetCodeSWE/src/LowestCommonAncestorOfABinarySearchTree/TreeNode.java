@@ -3,12 +3,12 @@ package LowestCommonAncestorOfABinarySearchTree;
 import com.sun.source.tree.Tree;
 
 public class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
+    public int val;
+    public TreeNode left;
+    public TreeNode right;
     public TreeNode(int x) { val = x; }
 
-    private TreeNode insert(TreeNode root, int val) {
+    private static TreeNode insert(TreeNode root, int val) {
         if (root == null) {
             return new TreeNode(val);
         }
@@ -20,7 +20,7 @@ public class TreeNode {
         return root;
     }
 
-    public TreeNode populateBST(int[] vals) {
+    public static TreeNode populateBST(int[] vals) {
         if (vals.length == 0) return null;
 
         TreeNode root = new TreeNode(vals[0]);
