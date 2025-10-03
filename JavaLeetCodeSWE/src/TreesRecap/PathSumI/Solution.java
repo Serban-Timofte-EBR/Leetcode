@@ -6,10 +6,8 @@ public class Solution {
     public boolean hasPathSum(TreeNode root, int targetSum) {
         if (root == null) return false;
 
-        int rem =  targetSum - root.val;
+        if (root.left == null && root.right == null) return targetSum - root.val == 0;
 
-        if (root.left == null && root.right == null && rem == 0) return true;
-
-        return hasPathSum(root.left,rem) ||  hasPathSum(root.right,rem);
+        return hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
     }
 }
